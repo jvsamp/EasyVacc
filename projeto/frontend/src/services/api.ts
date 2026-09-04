@@ -2,7 +2,7 @@
 
 // Define a URL base dependendo de onde o projeto estiver rodando
 const API_BASE_URL = import.meta.env.PROD 
-  ? "https://seu-dominio-php.com/backend/api" // URL de produção do seu backend PHP
+  ? "https://easyvacc-1.onrender.com" // URL de produção do seu backend PHP
   : "http://localhost/easyvacc-novo/backend/api"; // URL local para testes
 
 export const api = {
