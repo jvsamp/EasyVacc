@@ -1,17 +1,15 @@
 <?php
-// backend/api/login.php
+// backend/cors.php
+require_once '../cors.php';
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Content-Type: application/json; charset=UTF-8");
 
-require_once '../conexao.php';
-
-$data = json_decode(file_get_contents("php://input"), true);
-
-if (!isset($data['email']) || !isset($data['senha'])) {
-    http_response_code(400);
-    echo json_encode(["erro" => "E-mail e senha são obrigatórios"]);
-    exit;
+// Trata requisições de verificação (Preflight OPTIONS)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
 }
 
 $email = $data['email'];

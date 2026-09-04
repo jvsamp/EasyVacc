@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
 require_once '../conexao.php';
-
+require_once '../cors.php';
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method === 'GET') {
