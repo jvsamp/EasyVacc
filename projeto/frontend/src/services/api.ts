@@ -1,9 +1,7 @@
 // frontend/src/services/api.ts
 
-// Define a URL base dependendo de onde o projeto estiver rodando
-const API_BASE_URL = import.meta.env.PROD 
-  ? "https://easyvacc-1.onrender.com/api" // URL de produção do seu backend PHP
-  : "http://localhost/easyvacc-novo/backend/api"; // URL local para testes
+// URL fixa diretamente para o backend no Render
+const API_BASE_URL = "https://easyvacc-1.onrender.com/api";
 
 export const api = {
   async get(endpoint: string) {
