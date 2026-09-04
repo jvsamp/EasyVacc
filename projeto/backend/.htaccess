@@ -1,5 +1,1 @@
 RewriteEngine On
-
-# Responde 200 OK para a verificação do navegador (OPTIONS)
-RewriteCond %{REQUEST_METHOD} OPTIONS
-RewriteRule ^(.*)$ $1 [R=200,L]
