@@ -1,0 +1,17 @@
+FROM php:8.2-apache
+
+# Instala as dependências necessárias para o PDO PostgreSQL
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql
+
+# Habilita o mod_rewrite do Apache caso precise de rotas amigáveis
+RUN a2enmod rewrite
+
+# Copia os arquivos do backend para o diretório padrão do Apache
+COPY . /var/www/html/
+
+# Configura a porta que o Render vai injetar dinamicamente
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+
+EXPOSE 80
