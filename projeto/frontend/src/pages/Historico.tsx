@@ -45,7 +45,7 @@ export default function Historico() {
   // Em produção utilizará VITE_API_URL.
   // Localmente continuará funcionando na porta 5000.
   const API_URL =
-    import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    import.meta.env.VITE_API_URL || 'https://easyvacc-1.onrender.com/api/vacinas.php';
 
 
   // ==========================================================

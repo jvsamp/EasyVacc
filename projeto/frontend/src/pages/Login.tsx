@@ -22,7 +22,7 @@ import { ArrowLeft, Lock } from 'lucide-react';
 // VITE_API_URL=https://meu-backend.com
 //
 const API_URL =
-  import.meta.env.VITE_API_URL || 'https://easyvacc-1.onrender.com/api';
+  import.meta.env.VITE_API_URL || 'https://easyvacc-1.onrender.com/api/login.php';
 
 
 export default function Login() {
