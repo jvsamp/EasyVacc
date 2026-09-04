@@ -5,8 +5,11 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql
 
-# Habilita o mod_rewrite do Apache caso precise de rotas amigáveis
-RUN a2enmod rewrite
+# Habilita mod_rewrite E mod_headers (imprescindível para CORS no .htaccess)
+RUN a2enmod rewrite headers
+
+# Habilita a leitura do .htaccess pelo Apache
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Copia os arquivos do backend para o diretório padrão do Apache
 COPY . /var/www/html/
