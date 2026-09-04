@@ -31,7 +31,7 @@ export default function AdicionarDependente() {
     console.log("Enviando payload para a API:", payload);
 
     try {
-      const response = await fetch('http://localhost:5000/api/dependentes', {
+      const response = await fetch('https://easyvacc-1.onrender.com/api/dependentes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

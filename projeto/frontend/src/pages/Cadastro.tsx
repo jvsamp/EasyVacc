@@ -72,7 +72,7 @@ export default function Cadastro() {
       // Depois vamos trocar isso para funcionar
       // com o backend hospedado online.
       const response = await fetch(
-        'http://localhost:5000/api/usuarios/cadastro',
+        'https://easyvacc-1.onrender.com/api/usuarios/cadastro',
         {
           method: 'POST',
 

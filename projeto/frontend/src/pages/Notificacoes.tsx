@@ -51,7 +51,7 @@ export default function Notificacoes() {
       // ATENÇÃO:
       // localhost funciona apenas no desenvolvimento local.
       // Depois vamos configurar a URL do backend online.
-      fetch(`http://localhost:5000/api/notificacoes/${usuarioId}`)
+      fetch(`https://easyvacc-1.onrender.com/api/notificacoes/${usuarioId}`)
 
         // Converte a resposta do servidor para JSON.
         .then((res) => res.json())

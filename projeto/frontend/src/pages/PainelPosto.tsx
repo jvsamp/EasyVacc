@@ -19,7 +19,7 @@ export default function PainelPosto() {
 
     try {
       // 1. Primeiro, buscamos o usuário no banco pelo CPF digitado
-      const resBusca = await fetch(`http://localhost:5000/api/usuarios/cpf/${cpfCidadao}`);
+      const resBusca = await fetch(`https://easyvacc-1.onrender.com/api/usuarios/cpf/${cpfCidadao}`);
       const dadosUsuario = await resBusca.json();
 
       if (!dadosUsuario.sucesso || !dadosUsuario.dados) {

@@ -6,7 +6,7 @@ export default function Postos() {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/postos')
+    fetch('https://easyvacc-1.onrender.com/api/postos')
       .then(res => res.json())
       .then(data => {
         if (data.sucesso) setPostos(data.dados);

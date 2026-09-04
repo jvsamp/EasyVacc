@@ -25,7 +25,7 @@ export default function Perfil() {
   useEffect(() => {
     const usuarioId = localStorage.getItem('usuarioId');
     if (usuarioId) {
-      fetch(`http://localhost:5000/api/usuarios/${usuarioId}`)
+      fetch(`https://easyvacc-1.onrender.com/api/usuarios/${usuarioId}`)
         .then(res => res.json())
         .then(data => {
           if (data.sucesso) {
