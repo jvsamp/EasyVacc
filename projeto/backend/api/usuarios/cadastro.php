@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-require_once '../cors.php';
-require_once '../conexao.php';
+require_once '../../cors.php';
+require_once '../../conexao.php';
 
 // Captura e decodifica o JSON do corpo da requisição
 $data = json_decode(file_get_contents("php://input"), true);
